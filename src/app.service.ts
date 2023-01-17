@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Param } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'GARLOOP';
-  }
+  // getProduct(@Param() params: any): string {
+  //   return `product ${params.productId}`;
+  // }
 }
