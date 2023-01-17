@@ -12,9 +12,9 @@ export class CategoriesController {
     return this.categoriesService.create(createCategoryDto);
   }
 
-  @Get()
-  findAll() {
-    return this.categoriesService.findAll();
+  @Get(':id/products/:productId')
+  GetCategory(@Param('productId') productId: string, @Param('id') id: string) {
+    return `product ${productId} and ${id}`
   }
 
   @Get(':id')
