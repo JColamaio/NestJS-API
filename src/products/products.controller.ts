@@ -37,8 +37,8 @@ export class ProductsController {
 
   @Get(':productId')
   @HttpCode(HttpStatus.ACCEPTED)
-  getOne( @Res() response: Response , @Param('id') id: number) {
-    return this.productsService.findOne(id)
+  getOne(@Param('productId') productId: number) {
+    return this.productsService.findOne(productId)
 
 }
 
@@ -53,7 +53,7 @@ export class ProductsController {
   }
 
   @Delete(':id')
-  delete(@Param('id') id: number,) {
-    return this.productsService.delete(id)
+  delete(@Param('productId') productId: number,) {
+    return this.productsService.delete(productId)
   }
 }
