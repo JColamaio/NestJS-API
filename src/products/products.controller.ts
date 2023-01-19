@@ -12,7 +12,7 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
-// import { CreateProductDto } from './dto/create-product.dto';
+import { CreateProductDto } from './dto/create-product.dto';
 // import { UpdateProductDto } from './dto/update-product.dto';
 import { ParseIntPipe } from 'src/common/parse-int/parse-int.pipe';
 
@@ -42,7 +42,7 @@ export class ProductsController {
 }
 
   @Post()
-  create(@Body() payload: any) {
+  create(@Body() payload: CreateProductDto) {
     return this.productsService.create(payload)
   }
 

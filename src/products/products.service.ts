@@ -16,7 +16,7 @@ export class ProductsService {
     },
   ];
 
-  create(payload: any) {
+  create(payload: CreateProductDto) {
     this.counterId = this.counterId + 1;
 
     const NewProduct = {
@@ -59,7 +59,7 @@ export class ProductsService {
     if ( index === -1) {
       throw new NotFoundException(`Product ${productId} not found`)
     }
-    this. products.splice(index, 1)
+    this.products.splice(index, 1)
     return true
   }
 }
